@@ -1,0 +1,55 @@
+# Key
+.env
+.cladue
+
+# Cache
+**/__pycache__/
+*.pyc
+
+# Logs
+*.log
+
+# 0_annotation
+
+# 1_vectordb (built vector DB + logs; rebuildable via c4_chroma_db.py)
+1_vectordb/C4_dataset/chroma_db/
+1_vectordb/C4_dataset/*.log
+
+# 2_rag
+2_rag/agents_output*/
+2_rag/annotated_dataset*/
+2_rag/output*/
+2_rag/label_distribution/
+2_rag/hybrid_filter_summary*.json
+2_rag/annotation_analysis.py
+
+# 3_downstream_task
+3_downstream_task/CrowS-Pairs/
+3_downstream_task/Political-Compass/
+3_downstream_task/inference_rag/
+3_downstream_task/opinions_qa/
+3_downstream_task/fine_tuning/checkpoints*/
+3_downstream_task/fine_tuning/finetuning_data*/
+3_downstream_task/fine_tuning/logs/
+# pre-v2 / unused fine-tuning scripts
+3_downstream_task/fine_tuning/train_models_qwen35.py
+3_downstream_task/fine_tuning/run_qwen35_finetuning.sh
+3_downstream_task/fine_tuning/run_prepare_chunk_train.sh
+3_downstream_task/fine_tuning/run_chunk_all.py
+3_downstream_task/fine_tuning/filter_hybrid_sources.py
+3_downstream_task/fine_tuning/models/llama3.2-3b/
+
+# 4_quality_metric
+4_quality_metric/
+
+# 5_issue_generation
+5_issue_generation/results/
+
+data/
+filtering/
+framing_bias_metric/
+generalization_eval/
+outputs/
+
+# Claude 로컬 설정 (서버 종속)
+.claude/
