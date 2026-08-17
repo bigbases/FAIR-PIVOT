@@ -2,9 +2,32 @@
 
 **Fairness-Aware synthetic data generation and downstream evaluation for mitigating political bias in language models.**
 
+> 📄 This repository contains the official code for our paper accepted at **CIKM 2026**:
+>
+> **"FAIR-PIVOT: Fairness-oriented Perspective-Inversion via Viewpoint-balanced Outline-then-generaTion for Mitigating Political Bias in Web Corpora"**
+> Haneul Kim, Jaebeom You, Jaewon Lee, Kisung Lee, and Hyuk-Yoon Kwon.
+> *Proceedings of the 35th ACM International Conference on Information and Knowledge Management (CIKM '26), November 7–11, 2026, Rome, Italy.*
+> https://doi.org/10.1145/3799682.3839983
+
 FAIR-PIVOT is a research pipeline that (1) builds a politically annotated retrieval corpus, (2) generates **balanced synthetic opinion data** through a RAG-based multi-agent system, (3) fine-tunes downstream LLMs on that data, and (4) evaluates the resulting models for political fairness and framing bias.
 
 > ⚠️ **Code-only repository.** Model checkpoints, vector databases, raw/annotated datasets, and generated outputs are **not** included (they total ~100+ GB and are excluded via `.gitignore`). The scripts here reproduce the pipeline but expect you to supply / regenerate those artifacts. See [Caveats](#caveats).
+
+---
+
+## Citation
+
+If you use this code, please cite:
+
+```bibtex
+@inproceedings{kim2026fairpivot,
+  title     = {FAIR-PIVOT: Fairness-oriented Perspective-Inversion via Viewpoint-balanced Outline-then-generaTion for Mitigating Political Bias in Web Corpora},
+  author    = {Kim, Haneul and You, Jaebeom and Lee, Jaewon and Lee, Kisung and Kwon, Hyuk-Yoon},
+  booktitle = {Proceedings of the 35th ACM International Conference on Information and Knowledge Management (CIKM '26)},
+  year      = {2026},
+  doi       = {10.1145/3799682.3839983}
+}
+```
 
 ---
 
