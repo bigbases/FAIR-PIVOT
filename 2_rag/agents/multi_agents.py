@@ -18,11 +18,17 @@ os.environ["LANGCHAIN_TRACING_V2"] = "false"
 os.environ.pop("LANGCHAIN_API_KEY", None)
 
 # Configuration
-ANNOTATED_DATASET_DIR = "/workspace/FAIR_SYNTH_Haneul/2_rag/annotated_dataset"
-CHROMA_DB_PATH = "/workspace/FAIR_SYNTH_Haneul/1_vectordb/C4_dataset/chroma_db"
+# Project root: defaults to this repository's root; override with FAIR_PIVOT_ROOT
+# (e.g. export FAIR_PIVOT_ROOT=/path/to/your/workspace/FAIR-PIVOT).
+PROJECT_ROOT = os.environ.get(
+    "FAIR_PIVOT_ROOT",
+    os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), os.pardir, os.pardir)),
+)
+ANNOTATED_DATASET_DIR = os.path.join(PROJECT_ROOT, "2_rag", "annotated_dataset")
+CHROMA_DB_PATH = os.path.join(PROJECT_ROOT, "1_vectordb", "C4_dataset", "chroma_db")
 COLLECTION_NAME = "c4_docs"
-OUTPUT_DIR = "/workspace/FAIR_SYNTH_Haneul/2_rag/output_qwen35"
-AGENTS_OUTPUT_DIR = "/workspace/FAIR_SYNTH_Haneul/2_rag/agents_output_qwen35"
+OUTPUT_DIR = os.path.join(PROJECT_ROOT, "2_rag", "output_qwen35")
+AGENTS_OUTPUT_DIR = os.path.join(PROJECT_ROOT, "2_rag", "agents_output_qwen35")
 VLLM_MODEL = "Qwen/Qwen3.5-35B-A3B"
 VLLM_BASE_URL = "http://localhost:8000/v1"
 VLLM_API_KEY = "EMPTY"

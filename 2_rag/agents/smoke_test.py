@@ -17,13 +17,14 @@ if _AGENTS_DIR not in sys.path:
 from multi_agents import (  # noqa: E402
     AGENTS_OUTPUT_DIR,
     OUTPUT_DIR,
+    PROJECT_ROOT,
     PipelineState,
     RAGPipeline,
 )
 
 N_ITER = 2
 
-ORIGINAL_SAMPLE = "/workspace/FAIR_SYNTH_Haneul/2_rag/output/generated_additional_LGBTQ.json"
+ORIGINAL_SAMPLE = os.path.join(PROJECT_ROOT, "2_rag", "output", "generated_additional_LGBTQ.json")
 
 
 def main():

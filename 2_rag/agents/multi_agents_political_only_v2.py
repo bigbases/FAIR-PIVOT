@@ -13,6 +13,7 @@ following a single (left-leaning) source pool framing.
 """
 
 import json
+import os
 import random
 import re
 from collections import Counter, defaultdict
@@ -25,15 +26,16 @@ from multi_agents import (
     ANGLES,
     CONTENT_TYPES,
     FIXED_K,
+    PROJECT_ROOT,
     PipelineState,
     RAGPipeline,
     STYLE_GUIDES,
     TARGET_AUDIENCES,
 )
 
-# Override paths
-OUTPUT_DIR = "/workspace/FAIR_SYNTH_Haneul/2_rag/output_qwen35_political_only_v2"
-AGENTS_OUTPUT_DIR = "/workspace/FAIR_SYNTH_Haneul/2_rag/agents_output_qwen35_political_only_v2"
+# Override paths (relative to PROJECT_ROOT; see FAIR_PIVOT_ROOT in multi_agents.py)
+OUTPUT_DIR = os.path.join(PROJECT_ROOT, "2_rag", "output_qwen35_political_only_v2")
+AGENTS_OUTPUT_DIR = os.path.join(PROJECT_ROOT, "2_rag", "agents_output_qwen35_political_only_v2")
 
 # Stance-free query
 QUERY_TEMPLATE = "Article about {topic} from {political} perspective"

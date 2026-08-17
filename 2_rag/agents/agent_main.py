@@ -21,12 +21,13 @@ from multi_agents import (
     ANNOTATED_DATASET_DIR,
     OUTPUT_DIR,
     AGENTS_OUTPUT_DIR,
+    PROJECT_ROOT,
 )
 
 PROGRESS_SUBDIR = "_progress"
 SMOKE_SUBDIR = "_smoke"
 # Reference for the expected output schema (used by --smoke schema check).
-ORIGINAL_SAMPLE = "/workspace/FAIR_SYNTH_Haneul/2_rag/output/generated_additional_LGBTQ.json"
+ORIGINAL_SAMPLE = os.path.join(PROJECT_ROOT, "2_rag", "output", "generated_additional_LGBTQ.json")
 
 
 def _save_topic(topic_full: str, topic_results: list,

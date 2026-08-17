@@ -3,7 +3,8 @@
 # base condition only, GENERATION_MODE = answer_plus_self_score (default).
 # Each arm = one invocation; both backbones loaded sequentially inside.
 set -u
-cd /workspace/FAIR_SYNTH_Haneul/implicit_framing_v1_issue_bundle
+# Run from this script's own directory (5_issue_generation), which holds scripts/.
+cd "$(cd "$(dirname "$0")" && pwd)"
 
 export IFV1_BACKBONES=gemma3-4b,llama3.2-3b
 export IFV1_CONDITIONS=base

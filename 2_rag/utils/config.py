@@ -3,6 +3,18 @@ from dataclasses import dataclass, field
 from typing import Dict, Any
 
 
+# Project root: defaults to this repository's root; override with FAIR_PIVOT_ROOT
+# (e.g. export FAIR_PIVOT_ROOT=/path/to/your/workspace/FAIR-PIVOT).
+PROJECT_ROOT = os.environ.get(
+    "FAIR_PIVOT_ROOT",
+    os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), os.pardir, os.pardir)),
+)
+DEFAULT_CHROMA_DB_PATH = os.path.join(
+    PROJECT_ROOT,
+    "1_vectordb", "fineweb_dataset", "chroma_db", "chroma_db_multilingual-e5-large-instruct",
+)
+
+
 @dataclass
 class FairnessConfig:
     topics: Dict[str, Dict[str, str]] = field(default_factory=lambda: {
@@ -47,7 +59,7 @@ class FairnessConfig:
     # Directory path
     data_dir: str = "annotated_dataset"
     output_dir: str = "output"
-    chroma_db_path: str = "/workspace/rag_fair_dataset_SIGIR2026/1_vectordb/fineweb_dataset/chroma_db/chroma_db_multilingual-e5-large-instruct"
+    chroma_db_path: str = DEFAULT_CHROMA_DB_PATH
     collection_name: str = "web_docs"
     
     # Model settings

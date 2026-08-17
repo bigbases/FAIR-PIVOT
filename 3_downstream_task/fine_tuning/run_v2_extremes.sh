@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 # 6 finetunings sequential: balanced(gemma,qwen) -> left(gemma,qwen) -> right(gemma,qwen)
 set -u
-cd /workspace/FAIR_SYNTH_Haneul/3_downstream_task/fine_tuning
+# Run from this script's own directory (3_downstream_task/fine_tuning).
+cd "$(cd "$(dirname "$0")" && pwd)"
 
 run_one () {
   local backbone=$1 dataset=$2 script=$3 model_dir=$4

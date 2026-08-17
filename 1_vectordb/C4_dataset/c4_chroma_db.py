@@ -9,8 +9,14 @@ from collections import Counter
 from typing import Tuple, List
 
 # Configuration
-ANNOTATED_DIR = "/workspace/rag_fair_dataset_SIGIR2026/2_rag/annotated_dataset"
-CHROMA_DB_PATH = "/workspace/rag_fair_dataset_SIGIR2026/1_vectordb/C4_dataset/chroma_db"
+# Project root: defaults to this repository's root; override with FAIR_PIVOT_ROOT
+# (e.g. export FAIR_PIVOT_ROOT=/path/to/your/workspace/FAIR-PIVOT).
+PROJECT_ROOT = os.environ.get(
+    "FAIR_PIVOT_ROOT",
+    os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), os.pardir, os.pardir)),
+)
+ANNOTATED_DIR = os.path.join(PROJECT_ROOT, "2_rag", "annotated_dataset")
+CHROMA_DB_PATH = os.path.join(PROJECT_ROOT, "1_vectordb", "C4_dataset", "chroma_db")
 COLLECTION_NAME = "c4_docs"
 EMBEDDING_MODEL = "intfloat/multilingual-e5-large-instruct"
 

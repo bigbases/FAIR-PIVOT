@@ -85,6 +85,14 @@ export OPENAI_API_KEY=...        # used by langchain_openai ChatOpenAI
 # (a .env with OPENAI_API_KEY is read locally and is gitignored)
 ```
 
+All data/output paths are resolved relative to the repository root, so the scripts work
+out of the box from a clone. If your datasets, vector DBs, and outputs live somewhere
+else, point `FAIR_PIVOT_ROOT` at that directory once:
+
+```bash
+export FAIR_PIVOT_ROOT=/path/to/your/workspace/FAIR-PIVOT
+```
+
 ## Running the pipeline (sketch)
 
 ```bash
@@ -107,9 +115,10 @@ python 5_issue_generation/scripts/judge_issue_eval.py
 
 ## Caveats
 
-- **Hardcoded absolute paths.** Several scripts contain machine-specific paths such as
-  `/workspace/FAIR_SYNTH_Haneul/...` (and some older `/workspace/rag_fair_dataset_SIGIR2026/...`).
-  Update these to your environment before running.
+- **Path configuration.** Data, vector-DB, and output locations are derived from the repository
+  root and can be redirected in one place via the `FAIR_PIVOT_ROOT` environment variable
+  (see [Setup](#setup)). Directory names under that root (e.g. `2_rag/output_qwen35`) are still
+  fixed in the scripts; adjust them if your layout differs.
 - **Excluded artifacts.** Vector DBs, checkpoints, fine-tuning data, annotated datasets, and all
   generated outputs are gitignored. You must regenerate them by running the corresponding stage.
 - **GPU / model availability.** Serving and fine-tuning assume local GPUs and access to the
