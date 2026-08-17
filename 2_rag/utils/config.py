@@ -30,9 +30,9 @@ class FairnessConfig:
             'filename': 'annotated_free_market_20250803_234743',
             'display_name': 'Free Market'
         },
-        'Gender Equality': {
-            'filename': 'annotated_gender_equality_20250805_074411',
-            'display_name': 'Gender Equality'
+        'Abortion': {
+            'filename': 'annotated_abortion',
+            'display_name': 'Abortion'
         },
         'Gun Control': {
             'filename': 'annotated_gun_control_20250731_231907',
@@ -46,9 +46,9 @@ class FairnessConfig:
             'filename': 'annotated_LGBTQ_20250802_005914',
             'display_name': 'LGBTQ Rights'
         },
-        'Nationalism': {
-            'filename': 'annotated_nationalism_20250805_233926',
-            'display_name': 'Nationalism'
+        'Trade Policy': {
+            'filename': 'annotated_trade_policy',
+            'display_name': 'Trade Policy'
         },
         'Death Penalty': {
             'filename': 'annotated_death_penalty_20250805_024453',
