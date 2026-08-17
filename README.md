@@ -25,6 +25,8 @@ the subject of rebuttal and as grounding for logical reframing. Because generati
 authentic opposing-viewpoint documents rather than paraphrases of same-view text, the result
 preserves genuine discourse structure instead of restoring count balance alone.
 
+<img width="500" height="auto" alt="Image" src="https://github.com/user-attachments/assets/e7a84c0b-8725-4c23-bf93-cbbdf232aeeb" />
+
 Inversion is carried out by two agents in sequence, which is what *outline-then-generation* denotes:
 
 - **Outline design agent** — a strategist. It analyzes the retrieved contrasting documents for their
